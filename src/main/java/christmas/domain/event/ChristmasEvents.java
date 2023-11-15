@@ -4,21 +4,21 @@ import java.time.LocalDate;
 
 public enum ChristmasEvents {
 
-    CHRISTMAS_D_DAY_EVENT(LocalDate.of(2023,12,1),
-            LocalDate.of(2023,12,25).plusDays(1),
+    CHRISTMAS_D_DAY_EVENT(LocalDate.of(2023, 12, 1),
+            LocalDate.of(2023, 12, 25).plusDays(1),
             "크리스마스 디데이 할인"),
-    WEEKDAY_EVENT(LocalDate.of(2023,12,1),
-            LocalDate.of(2023,12,31).plusDays(1),
+    WEEKDAY_EVENT(LocalDate.of(2023, 12, 1),
+            LocalDate.of(2023, 12, 31).plusDays(1),
             "평일 할인"),
-    WEEKEND_EVENT(LocalDate.of(2023,12,1),
-            LocalDate.of(2023,12,31).plusDays(1),
+    WEEKEND_EVENT(LocalDate.of(2023, 12, 1),
+            LocalDate.of(2023, 12, 31).plusDays(1),
             "주말 할인"),
-    SPECIAL_EVENT(LocalDate.of(2023,12,1),
-            LocalDate.of(2023,12,31).plusDays(1),
+    SPECIAL_EVENT(LocalDate.of(2023, 12, 1),
+            LocalDate.of(2023, 12, 31).plusDays(1),
             "특별 할인"),
     BONUS_GIFT_EVENT(
-            LocalDate.of(2023,12,1),
-            LocalDate.of(2023,12,31).plusDays(1),
+            LocalDate.of(2023, 12, 1),
+            LocalDate.of(2023, 12, 31).plusDays(1),
             "증정 이벤트");
 
     private final LocalDate startDate;

@@ -20,7 +20,7 @@ public enum ChristmasBonusGiftEvents {
         this.bonusGiftCount = bonusGiftCount;
     }
 
-    public static List<BonusGiftDTO> getBonusGiftsForEvent (ChristmasEvents event) {
+    public static List<BonusGiftDTO> getBonusGiftsForEvent(ChristmasEvents event) {
         return Arrays.stream(values())
                 .filter(it -> it.event == event)
                 .map(it -> new BonusGiftDTO(it.bonusGiftName, it.bonusGiftCount))

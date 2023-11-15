@@ -15,10 +15,6 @@ public class OutputView {
         System.out.println();
     }
 
-    public void printErrorMessage(String message) {
-        System.out.println(message);
-    }
-
     public void printEventInformationMessage(LocalDate orderDate) {
         System.out.printf(OUTPUT_EVENT_INFORMATION.getMessage(), orderDate.getMonthValue(), orderDate.getDayOfMonth());
         System.out.println();
@@ -103,6 +99,10 @@ public class OutputView {
     private void printEventBadge(EventBadgeDTO eventBadgeDTO) {
         System.out.printf(OUTPUT_EVENT_BADGE.getMessage(), eventBadgeDTO.month(), eventBadgeDTO.badge());
         System.out.println();
+    }
+
+    public void printErrorMessage(String message) {
+        System.out.println(message);
     }
 
     private String makeAmount(int amount) {

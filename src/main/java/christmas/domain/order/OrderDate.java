@@ -26,31 +26,22 @@ public class OrderDate {
     }
 
     private void validate(String date) {
-        validateNull(date);
-        validateInteger(date);
-        if (isNotValidDate(Parser.stringToInt(date))) {
+        if (isNull(date) || isNotInteger(date)
+                || isEmpty(date) || isNotValidDate(Parser.stringToInt(date))) {
             throw NOT_VALID_DATE.create();
         }
     }
 
-    private void validateNull(String input) {
-        if (input == null) {
-            throw NOT_VALID_DATE.create();
-        }
+    private boolean isNull(String date) {
+        return date == null;
     }
 
-    private void validateInteger(String input) {
-        if (isNotInteger(input) || isEmpty(input)) {
-            throw NOT_VALID_DATE.create();
-        }
+    private boolean isNotInteger(String date) {
+        return !date.matches("^[\\d]*$");
     }
 
-    private boolean isNotInteger(String input) {
-        return !input.matches("^[\\d]*$");
-    }
-
-    private boolean isEmpty(String input) {
-        return input.equals(EMPTY);
+    private boolean isEmpty(String date) {
+        return date.equals(EMPTY);
     }
 
     private boolean isNotValidDate(int date) {

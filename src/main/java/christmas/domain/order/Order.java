@@ -23,16 +23,16 @@ public class Order {
     public static Order create(String order) {
         validateNull(order);
         StringTokenizer st = new StringTokenizer(order, MENU_MENUCOUNT_DELIMITER);
-        validate(st);
+        validateToken(st);
         Menu menu = Menu.from(st.nextToken());
-        validate(st);
+        validateToken(st);
         String count = st.nextToken();
         validateNumber(count);
         MenuCount menuCount = MenuCount.create(Parser.stringToInt(count));
         return new Order(menu, menuCount);
     }
 
-    private static void validate(StringTokenizer st) {
+    private static void validateToken(StringTokenizer st) {
         if (!st.hasMoreTokens()) {
             throw NOT_VALID_ORDER.create();
         }
